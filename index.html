@@ -1,1208 +1,649 @@
-html
+```html
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Patel Enterprises | Premium Online Store</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#080b12;
-    color:#fff;
-}
-
-/* ===== TOP BAR ===== */
-
-.topbar{
-    background:#05070b;
-    color:#d8b56a;
-    text-align:center;
-    padding:8px;
-    font-size:13px;
-    letter-spacing:1px;
-}
-
-/* ===== HEADER ===== */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    background:rgba(10,12,18,.94);
-    backdrop-filter:blur(15px);
-
-    border-bottom:1px solid rgba(216,181,106,.25);
-
-    padding:18px 5%;
-}
-
-.nav{
-    max-width:1200px;
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo-icon{
-    width:48px;
-    height:48px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:linear-gradient(135deg,#d8b56a,#fff0b0,#b98a32);
-
-    color:#111;
-
-    font-size:25px;
-
-    box-shadow:0 0 20px rgba(216,181,106,.35);
-}
-
-.logo h1{
-    font-size:23px;
-    color:#fff;
-}
-
-.logo span{
-    color:#d8b56a;
-}
-
-.cart-btn{
-    border:1px solid #d8b56a;
-    background:transparent;
-    color:#d8b56a;
-
-    padding:11px 18px;
-    border-radius:25px;
-
-    cursor:pointer;
-    font-weight:bold;
-
-    transition:.3s;
-}
-
-.cart-btn:hover{
-    background:#d8b56a;
-    color:#111;
-}
-
-/* ===== HERO ===== */
-
-.hero{
-    min-height:570px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:60px 20px;
-
-    position:relative;
-    overflow:hidden;
-
-    background:
-    radial-gradient(circle at 20% 20%,rgba(216,181,106,.16),transparent 30%),
-    radial-gradient(circle at 80% 80%,rgba(255,255,255,.06),transparent 30%),
-    linear-gradient(135deg,#090b11,#15100a,#080b12);
-}
-
-.hero::before{
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(216,181,106,.15);
-
-    animation:rotate 20s linear infinite;
-}
-
-@keyframes rotate{
-    from{
-        transform:rotate(0deg);
-    }
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:800px;
-}
-
-.crown{
-    font-size:50px;
-
-    animation:float 2s ease-in-out infinite alternate;
-}
-
-@keyframes float{
-    from{
-        transform:translateY(0);
-    }
-    to{
-        transform:translateY(-10px);
-    }
-}
-
-.hero-small{
-    color:#d8b56a;
-    letter-spacing:5px;
-    font-size:13px;
-    margin:15px 0;
-}
-
-.hero h2{
-    font-size:clamp(42px,9vw,78px);
-
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #d8b56a,
-        #fff0b0,
-        #b98a32,
-        #fff
-    );
-
-    background-size:300%;
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    animation:shine 5s linear infinite;
-}
-
-@keyframes shine{
-    0%{
-        background-position:0%;
-    }
-    100%{
-        background-position:300%;
-    }
-}
-
-.hero p{
-    color:#ddd;
-    font-size:19px;
-    margin:15px auto;
-    line-height:1.7;
-}
-
-.hero-buttons{
-    margin-top:30px;
-
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-}
-
-.btn{
-    display:inline-block;
-
-    padding:14px 25px;
-
-    border-radius:30px;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    transition:.3s;
-}
-
-.shop-btn{
-    background:linear-gradient(135deg,#d8b56a,#fff0b0,#b98a32);
-    color:#111;
-
-    box-shadow:0 0 25px rgba(216,181,106,.3);
-}
-
-.shop-btn:hover{
-    transform:translateY(-4px) scale(1.04);
-}
-
-.birthday-btn{
-    background:linear-gradient(135deg,#ff0080,#8e2de2);
-    color:white;
-
-    box-shadow:0 0 25px rgba(255,0,128,.3);
-}
-
-.birthday-btn:hover{
-    transform:translateY(-4px) scale(1.04);
-}
-
-/* ===== SECTION ===== */
-
-.section{
-    max-width:1200px;
-    margin:auto;
-
-    padding:65px 20px;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.section-title small{
-    color:#d8b56a;
-    letter-spacing:4px;
-}
-
-.section-title h2{
-    font-size:36px;
-    margin-top:8px;
-}
-
-.section-title p{
-    color:#999;
-    margin-top:8px;
-}
-
-/* ===== SEARCH ===== */
-
-.search-box{
-    max-width:600px;
-    margin:0 auto 35px;
-
-    display:flex;
-
-    background:#121620;
-
-    border:1px solid rgba(216,181,106,.3);
-
-    border-radius:30px;
-
-    overflow:hidden;
-}
-
-.search-box input{
-    flex:1;
-
-    border:0;
-    outline:0;
-
-    padding:15px 20px;
-
-    background:transparent;
-
-    color:white;
-
-    font-size:16px;
-}
-
-.search-box span{
-    padding:15px 20px;
-    color:#d8b56a;
-}
-
-/* ===== PRODUCTS ===== */
-
-.products{
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(210px,1fr));
-
-    gap:20px;
-}
-
-.product{
-    background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.07),
-        rgba(255,255,255,.02)
-    );
-
-    border:1px solid rgba(216,181,106,.18);
-
-    border-radius:22px;
-
-    padding:25px;
-
-    text-align:center;
-
-    transition:.35s;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.product:hover{
-    transform:translateY(-8px);
-
-    border-color:#d8b56a;
-
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.4),
-    0 0 25px rgba(216,181,106,.1);
-}
-
-.product-icon{
-    font-size:55px;
-
-    margin-bottom:15px;
-}
-
-.product h3{
-    font-size:20px;
-}
-
-.product p{
-    color:#999;
-
-    margin:8px 0;
-}
-
-.price{
-    color:#d8b56a;
-
-    font-size:19px;
-
-    font-weight:bold;
-
-    margin:12px 0;
-}
-
-.add{
-    border:0;
-
-    background:#d8b56a;
-
-    color:#111;
-
-    padding:10px 18px;
-
-    border-radius:25px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.3s;
-}
-
-.add:hover{
-    background:#fff0b0;
-
-    transform:scale(1.05);
-}
-
-/* ===== INFO ===== */
-
-.info-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
-    gap:18px;
-}
-
-.info-card{
-    background:#111620;
-
-    border:1px solid rgba(216,181,106,.18);
-
-    padding:25px;
-
-    border-radius:20px;
-
-    text-align:center;
-}
-
-.info-card .icon{
-    font-size:35px;
-    margin-bottom:12px;
-}
-
-.info-card h3{
-    color:#d8b56a;
-    margin-bottom:8px;
-}
-
-.info-card p{
-    color:#bbb;
-    line-height:1.6;
-}
-
-/* ===== CONTACT ===== */
-
-.contact{
-    text-align:center;
-
-    background:
-    radial-gradient(circle,#241d10,#090b11 70%);
-
-    border-top:1px solid rgba(216,181,106,.2);
-
-    border-bottom:1px solid rgba(216,181,106,.2);
-
-    padding:65px 20px;
-}
-
-.contact h2{
-    font-size:35px;
-}
-
-.contact p{
-    color:#aaa;
-    margin:12px 0 25px;
-}
-
-.contact-buttons{
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:12px;
-}
-
-.call{
-    background:#1976d2;
-    color:white;
-}
-
-.whatsapp{
-    background:#25d366;
-    color:white;
-}
-
-/* ===== CART ===== */
-
-#cart{
-    display:none;
-
-    position:fixed;
-
-    right:18px;
-    top:85px;
-
-    width:350px;
-    max-width:90%;
-
-    background:#111620;
-
-    border:1px solid #d8b56a;
-
-    border-radius:20px;
-
-    padding:22px;
-
-    z-index:2000;
-
-    box-shadow:0 15px 50px rgba(0,0,0,.6);
-}
-
-#cart h2{
-    color:#d8b56a;
-    margin-bottom:15px;
-}
-
-.close{
-    float:right;
-
-    border:0;
-
-    background:none;
-
-    color:white;
-
-    font-size:22px;
-
-    cursor:pointer;
-}
-
-.cart-item{
-    padding:10px 0;
-
-    border-bottom:1px solid #282e38;
-
-    color:#ddd;
-}
-
-.order{
-    width:100%;
-
-    margin-top:18px;
-
-    padding:13px;
-
-    border:0;
-
-    border-radius:25px;
-
-    background:#25d366;
-
-    color:white;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-/* ===== FOOTER ===== */
-
-footer{
-    background:#05070b;
-
-    border-top:1px solid rgba(216,181,106,.2);
-
-    text-align:center;
-
-    padding:35px 20px;
-}
-
-footer h3{
-    color:#d8b56a;
-
-    font-size:24px;
-}
-
-footer p{
-    color:#888;
-
-    margin-top:8px;
-}
-
-@media(max-width:600px){
-
-    header{
-        padding:13px;
-    }
-
-    .logo h1{
-        font-size:18px;
-    }
-
-    .logo-icon{
-        width:40px;
-        height:40px;
-        font-size:20px;
-    }
-
-    .hero{
-        min-height:500px;
-    }
-
-    .hero h2{
-        font-size:45px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .section{
-        padding:45px 15px;
-    }
-
-    .section-title h2{
-        font-size:29px;
-    }
-
-    #cart{
-        top:80px;
-        right:5%;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patel Enterprises | Premium Kirana & Online Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg,#ffd84d,#ff9d00);
+            font-size: 23px;
+        }
+
+        .logo h2 {
+            color: #ffd84d;
+        }
+
+        .cart {
+            padding: 10px 18px;
+            border: 1px solid #ffd84d;
+            border-radius: 30px;
+            color: #ffd84d;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            position: relative;
+            background:
+                radial-gradient(circle at center, #342900 0%, #111 35%, #080808 75%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .crown {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            letter-spacing: 5px;
+            color: #ffd84d;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            margin: 15px 0;
+            font-size: clamp(45px, 8vw, 90px);
+            color: #ffd84d;
+            text-shadow: 0 0 35px rgba(255,216,77,0.25);
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: none;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .shop-btn {
+            background: linear-gradient(135deg,#ffd84d,#ff9d00);
+            color: #111;
+            box-shadow: 0 10px 30px rgba(255,190,0,.25);
+        }
+
+        .birthday-btn {
+            color: white;
+            background: linear-gradient(135deg,#ff4081,#7c4dff);
+            box-shadow: 0 10px 30px rgba(124,77,255,.35);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.04);
+        }
+
+        /* STORE INFO */
+        .info {
+            padding: 60px 7%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .info-card {
+            padding: 28px;
+            text-align: center;
+            border: 1px solid #333;
+            border-radius: 20px;
+            background: linear-gradient(145deg,#151515,#0d0d0d);
+        }
+
+        .info-card .icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .info-card h3 {
+            color: #ffd84d;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: #bbb;
+        }
+
+        /* PRODUCTS */
+        .products {
+            padding: 60px 7%;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            color: #ffd84d;
+        }
+
+        .section-title p {
+            color: #999;
+            margin-top: 8px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+            gap: 20px;
+        }
+
+        .product {
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid #292929;
+            background: #111;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            border-color: #ffd84d;
+        }
+
+        .product-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            margin-bottom: 8px;
+        }
+
+        .product p {
+            color: #999;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 70px 20px;
+            text-align: center;
+            background: #101010;
+        }
+
+        .contact h2 {
+            font-size: 40px;
+            color: #ffd84d;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #bbb;
+            margin: 8px;
+        }
+
+        .call-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 25px;
+            text-align: center;
+            color: #777;
+            border-top: 1px solid #222;
+        }
+
+        /* PASSWORD POPUP */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,.82);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+        }
+
+        .modal-box {
+            width: 380px;
+            max-width: 100%;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 25px;
+            background: linear-gradient(145deg,#1c1c1c,#090909);
+            border: 1px solid #444;
+            box-shadow: 0 20px 70px rgba(0,0,0,.7);
+            position: relative;
+        }
+
+        .lock {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .modal-box h2 {
+            color: #ffd84d;
+            margin-bottom: 8px;
+        }
+
+        .modal-box p {
+            color: #aaa;
+            margin-bottom: 18px;
+        }
+
+        .modal-box input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #444;
+            outline: none;
+            background: #111;
+            color: white;
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .unlock {
+            width: 100%;
+            margin-top: 15px;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg,#ff4081,#7c4dff);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        @media(max-width:600px) {
+            header {
+                padding: 14px 5%;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .cart {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="topbar">
-    ✨ घोरवई बस स्टैंड • सुबह 6:00 बजे से रात 10:00 बजे तक ✨
-</div>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">🛒</div>
+            <h2>Patel Enterprises</h2>
+        </div>
 
-<header>
+        <div class="cart">
+            🛒 Cart (0)
+        </div>
+    </header>
 
-<div class="nav">
 
-<div class="logo">
+    <!-- HERO -->
+    <section class="hero">
 
-<div class="logo-icon">
-    🛒
-</div>
+        <div class="hero-content">
 
-<div>
-<h1>Patel <span>Enterprises</span></h1>
-</div>
+            <div class="crown">👑</div>
 
-</div>
+            <div class="tagline">
+                PREMIUM • TRUST • QUALITY
+            </div>
 
-<button class="cart-btn" onclick="toggleCart()">
-    🛒 Cart (<span id="count">0</span>)
-</button>
+            <h1>Patel Enterprises</h1>
 
-</div>
+            <p>
+                आपकी अपनी भरोसेमंद किराना और ऑनलाइन दुकान।<br>
+                रोज़मर्रा का सामान अब आसानी से ऑर्डर करें।
+            </p>
 
-</header>
+            <div class="buttons">
 
+                <a href="#products" class="btn shop-btn">
+                    🛒 SHOP NOW
+                </a>
 
-<!-- HERO -->
+                <!-- BIRTHDAY BUTTON -->
+                <button onclick="openBirthday()" class="btn birthday-btn">
+                    🎁 BIRTHDAY SURPRISE
+                </button>
 
-<section class="hero">
+            </div>
 
-<div class="hero-content">
+        </div>
 
-<div class="crown">
-    👑
-</div>
+    </section>
 
-<div class="hero-small">
-    PREMIUM • TRUST • QUALITY
-</div>
 
-<h2>Patel Enterprises</h2>
+    <!-- SHOP INFO -->
+    <section class="info">
 
-<p>
-    आपकी अपनी भरोसेमंद किराना और ऑनलाइन दुकान।
-    <br>
-    रोज़मर्रा का सामान अब आसानी से ऑर्डर करें।
-</p>
+        <div class="info-card">
+            <div class="icon">📍</div>
+            <h3>हमारा पता</h3>
+            <p>घोरवई Bus Stand</p>
+        </div>
 
-<div class="hero-buttons">
+        <div class="info-card">
+            <div class="icon">📞</div>
+            <h3>फोन नंबर</h3>
+            <p>8839632236</p>
+        </div>
 
-<a href="#products" class="btn shop-btn">
-    🛍️ SHOP NOW
-</a>
+        <div class="info-card">
+            <div class="icon">🕕</div>
+            <h3>दुकान का समय</h3>
+            <p>सुबह 6:00 AM – रात 10:00 PM</p>
+        </div>
 
-<a href="https://mrkaranpatel.github.io/radhakpe2/"
-   class="btn birthday-btn">
-    🎁 BIRTHDAY SURPRISE
-</a>
+    </section>
 
-</div>
 
-</div>
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
 
-</section>
+        <div class="section-title">
+            <h2>🛍️ Popular Products</h2>
+            <p>आपकी रोज़मर्रा की जरूरत का सामान</p>
+        </div>
 
+        <div class="product-grid">
 
-<!-- PRODUCTS -->
+            <div class="product">
+                <div class="product-icon">🌾</div>
+                <h3>आटा</h3>
+                <p>Daily Grocery</p>
+            </div>
 
-<section class="section" id="products">
+            <div class="product">
+                <div class="product-icon">🍚</div>
+                <h3>चावल</h3>
+                <p>Premium Quality</p>
+            </div>
 
-<div class="section-title">
+            <div class="product">
+                <div class="product-icon">🫘</div>
+                <h3>दाल</h3>
+                <p>Fresh & Quality</p>
+            </div>
 
-<small>OUR STORE</small>
+            <div class="product">
+                <div class="product-icon">🛢️</div>
+                <h3>तेल</h3>
+                <p>Cooking Essentials</p>
+            </div>
 
-<h2>🛍️ Popular Products</h2>
+            <div class="product">
+                <div class="product-icon">🍪</div>
+                <h3>बिस्किट</h3>
+                <p>Snacks & More</p>
+            </div>
 
-<p>अपनी जरूरत का सामान चुनें</p>
+            <div class="product">
+                <div class="product-icon">🥤</div>
+                <h3>Cold Drinks</h3>
+                <p>Refreshments</p>
+            </div>
 
-</div>
+        </div>
 
+    </section>
 
-<div class="search-box">
 
-<input
-type="text"
-id="search"
-placeholder="🔎 Product खोजें..."
-onkeyup="searchProducts()"
->
+    <!-- CONTACT -->
+    <section class="contact">
 
-<span>SEARCH</span>
+        <h2>Patel Enterprises</h2>
 
-</div>
+        <p>📍 घोरवई Bus Stand</p>
+        <p>🕕 रोज़ सुबह 6 बजे से रात 10 बजे तक</p>
+        <p>📞 8839632236</p>
 
+        <a href="tel:8839632236" class="call-btn">
+            📞 Call Now
+        </a>
 
-<div class="products">
+    </section>
 
 
-<div class="product">
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Patel Enterprises • Premium Grocery & Online Store
+    </footer>
 
-<div class="product-icon">🍚</div>
 
-<h3>चावल</h3>
+    <!-- PASSWORD POPUP -->
+    <div class="modal" id="birthdayModal">
 
-<p>Quality Rice</p>
+        <div class="modal-box">
 
-<div class="price">
-    कीमत दुकान पर
-</div>
+            <button class="close" onclick="closeBirthday()">×</button>
 
-<button class="add"
-onclick="addToCart('चावल')">
-    + Cart में डालें
-</button>
+            <div class="lock">🔐</div>
 
-</div>
+            <h2>Private Birthday</h2>
 
+            <p>
+                Birthday Surprise देखने के लिए password डालें
+            </p>
 
-<div class="product">
+            <input
+                type="password"
+                id="birthdayPassword"
+                placeholder="Enter Password"
+                onkeydown="if(event.key==='Enter') checkPassword()"
+            >
 
-<div class="product-icon">🌾</div>
+            <button class="unlock" onclick="checkPassword()">
+                ✨ UNLOCK BIRTHDAY
+            </button>
 
-<h3>आटा</h3>
+            <div id="message"></div>
 
-<p>Fresh Flour</p>
+        </div>
 
-<div class="price">
-    कीमत दुकान पर
-</div>
+    </div>
 
-<button class="add"
-onclick="addToCart('आटा')">
-    + Cart में डालें
-</button>
 
-</div>
+    <script>
 
+        /* =========================================
+           BIRTHDAY SETTINGS
+           ========================================= */
 
-<div class="product">
+        const BIRTHDAY_PASSWORD = "2007";
 
-<div class="product-icon">🫘</div>
+        /*
+           अगर Birthday website का live URL अलग है,
+           तो सिर्फ नीचे वाला URL बदलना है।
+        */
 
-<h3>दाल</h3>
+        const BIRTHDAY_WEBSITE =
+            "https://mrkaranpatel.github.io/radhakpe2/";
 
-<p>Premium Pulses</p>
 
-<div class="price">
-    कीमत दुकान पर
-</div>
+        /* OPEN PASSWORD BOX */
 
-<button class="add"
-onclick="addToCart('दाल')">
-    + Cart में डालें
-</button>
+        function openBirthday() {
 
-</div>
+            document.getElementById("birthdayModal").style.display = "flex";
 
+            document.getElementById("birthdayPassword").value = "";
 
-<div class="product">
+            document.getElementById("message").innerHTML = "";
 
-<div class="product-icon">🛢️</div>
-
-<h3>खाने का तेल</h3>
-
-<p>Cooking Oil</p>
-
-<div class="price">
-    कीमत दुकान पर
-</div>
-
-<button class="add"
-onclick="addToCart('खाने का तेल')">
-    + Cart में डालें
-</button>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-icon">🍪</div>
-
-<h3>बिस्किट</h3>
-
-<p>Snacks & Biscuits</p>
-
-<div class="price">
-    कीमत दुकान पर
-</div>
-
-<button class="add"
-onclick="addToCart('बिस्किट')">
-    + Cart में डालें
-</button>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-icon">🥛</div>
-
-<h3>दूध</h3>
-
-<p>Daily Dairy</p>
-
-<div class="price">
-    कीमत दुकान पर
-</div>
-
-<button class="add"
-onclick="addToCart('दूध')">
-    + Cart में डालें
-</button>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-icon">🍬</div>
-
-<h3>नमकीन & मिठाई</h3>
-
-<p>Snacks & Sweets</p>
-
-<div class="price">
-    कीमत दुकान पर
-</div>
-
-<button class="add"
-onclick="addToCart('नमकीन और मिठाई')">
-    + Cart में डालें
-</button>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-icon">🧴</div>
-
-<h3>घरेलू सामान</h3>
-
-<p>Home Essentials</p>
-
-<div class="price">
-    कीमत दुकान पर
-</div>
-
-<button class="add"
-onclick="addToCart('घरेलू सामान')">
-    + Cart में डालें
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- STORE INFO -->
-
-<section class="section">
-
-<div class="section-title">
-
-<small>VISIT US</small>
-
-<h2>📍 हमारी दुकान</h2>
-
-</div>
-
-
-<div class="info-grid">
-
-
-<div class="info-card">
-
-<div class="icon">
-    🏪
-</div>
-
-<h3>दुकान</h3>
-
-<p>
-    Patel Enterprises
-</p>
-
-</div>
-
-
-<div class="info-card">
-
-<div class="icon">
-    📍
-</div>
-
-<h3>पता</h3>
-
-<p>
-    घोरवई बस स्टैंड
-</p>
-
-</div>
-
-
-<div class="info-card">
-
-<div class="icon">
-    🕐
-</div>
-
-<h3>समय</h3>
-
-<p>
-    सुबह 6:00 बजे<br>
-    से रात 10:00 बजे तक
-</p>
-
-</div>
-
-
-<div class="info-card">
-
-<div class="icon">
-    📞
-</div>
-
-<h3>फोन</h3>
-
-<p>
-    8839632236
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact">
-
-<h2>
-    📞 हमसे संपर्क करें
-</h2>
-
-<p>
-    सामान के लिए Call या WhatsApp करें।
-</p>
-
-<div class="contact-buttons">
-
-<a
-href="tel:8839632236"
-class="btn call">
-📞 CALL NOW
-</a>
-
-
-<a
-href="https://wa.me/918839632236?text=Namaste%20Patel%20Enterprises%2C%20mujhe%20samaan%20order%20karna%20hai."
-target="_blank"
-class="btn whatsapp">
-💬 WHATSAPP ORDER
-</a>
-
-</div>
-
-</section>
-
-
-<!-- CART -->
-
-<div id="cart">
-
-<button
-class="close"
-onclick="toggleCart()">
-    ✕
-</button>
-
-<h2>
-    🛒 आपका Cart
-</h2>
-
-<div id="cartItems">
-    Cart खाली है।
-</div>
-
-<button
-class="order"
-onclick="orderWhatsApp()">
-    💬 WhatsApp पर Order भेजें
-</button>
-
-</div>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<h3>
-    👑 Patel Enterprises
-</h3>
-
-<p>
-    आपकी अपनी भरोसेमंद किराना और ऑनलाइन दुकान
-</p>
-
-<p>
-    📍 घोरवई बस स्टैंड • 📞 8839632236
-</p>
-
-<p>
-    © 2026 Patel Enterprises
-</p>
-
-</footer>
-
-
-<script>
-
-let cart = [];
-
-
-function addToCart(product){
-
-    cart.push(product);
-
-    document.getElementById("count").innerText =
-        cart.length;
-
-    updateCart();
-
-}
-
-
-function updateCart(){
-
-    let box =
-        document.getElementById("cartItems");
-
-    if(cart.length === 0){
-
-        box.innerHTML =
-            "Cart खाली है।";
-
-        return;
-    }
-
-
-    box.innerHTML =
-        cart.map(
-            (item,index) =>
-            `<div class="cart-item">
-                ${index+1}. ${item}
-            </div>`
-        ).join("");
-
-}
-
-
-function toggleCart(){
-
-    let cartBox =
-        document.getElementById("cart");
-
-    cartBox.style.display =
-        cartBox.style.display === "block"
-        ? "none"
-        : "block";
-
-}
-
-
-function orderWhatsApp(){
-
-    if(cart.length === 0){
-
-        alert("पहले कोई सामान Cart में डालें।");
-
-        return;
-    }
-
-
-    let message =
-        "Namaste Patel Enterprises,%0A%0A" +
-        "Mujhe ye samaan order karna hai:%0A";
-
-
-    cart.forEach(
-        (item,index) => {
-
-            message +=
-                `${index+1}. ${item}%0A`;
+            setTimeout(function() {
+                document.getElementById("birthdayPassword").focus();
+            }, 100);
 
         }
-    );
 
 
-    window.open(
-        "https://wa.me/918839632236?text=" +
-        message,
-        "_blank"
-    );
+        /* CLOSE PASSWORD BOX */
 
-}
+        function closeBirthday() {
 
+            document.getElementById("birthdayModal").style.display = "none";
 
-/* SEARCH */
-
-function searchProducts(){
-
-    let input =
-        document
-        .getElementById("search")
-        .value
-        .toLowerCase();
+        }
 
 
-    let products =
-        document.querySelectorAll(".product");
+        /* CHECK PASSWORD */
+
+        function checkPassword() {
+
+            const password =
+                document.getElementById("birthdayPassword").value;
+
+            const message =
+                document.getElementById("message");
 
 
-    products.forEach(product => {
+            if (password === BIRTHDAY_PASSWORD) {
 
-        let text =
-            product.innerText.toLowerCase();
+                message.style.color = "#4cff88";
+
+                message.innerHTML =
+                    "✓ Password सही है! Birthday website खुल रही है...";
+
+                setTimeout(function() {
+
+                    window.location.href =
+                        BIRTHDAY_WEBSITE;
+
+                }, 700);
 
 
-        product.style.display =
-            text.includes(input)
-            ? "block"
-            : "none";
+            } else {
 
-    });
+                message.style.color = "#ff4d6d";
 
-}
+                message.innerHTML =
+                    "✕ Password गलत है!";
 
-</script>
+            }
+
+        }
+
+
+        /* MODAL के बाहर CLICK करने पर बंद */
+
+        document.getElementById("birthdayModal")
+        .addEventListener("click", function(event) {
+
+            if (event.target === this) {
+                closeBirthday();
+            }
+
+        });
+
+    </script>
 
 </body>
 </html>
+```
